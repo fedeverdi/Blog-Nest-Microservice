@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AppService } from './app.service';
+import { AppService } from '../app.service';
 import { getModelToken } from '@nestjs/mongoose';
-import { Blog } from './interfaces/blog.interface';
+import { Blog } from '../interfaces/blog.interface';
 
 describe('AppService', () => {
   let appService: AppService;
