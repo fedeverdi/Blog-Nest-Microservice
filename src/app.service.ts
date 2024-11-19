@@ -3,6 +3,7 @@ import { Model } from 'mongoose';
 import { Blog } from './interfaces/blog.interface';
 import { InjectModel } from '@nestjs/mongoose';
 import { FilterBlogsDto } from './dto/filters-blog.dto';
+import { BlogDto } from './dto/blog.dto';
 
 @Injectable()
 export class AppService {
@@ -37,7 +38,7 @@ export class AppService {
     };
   }
 
-  async create(createBlogDto: Blog): Promise<Blog> {
+  async create(createBlogDto: BlogDto): Promise<Blog> {
     // Creazione di un nuovo documento MongoDB
     const createdBlog = new this.blogModel(createBlogDto);
     // Salvataggio nel database

@@ -3,6 +3,7 @@ import { AppService } from './app.service';
 import { MessagePattern } from '@nestjs/microservices';
 import { Blog } from './interfaces/blog.interface';
 import { FilterBlogsDto } from './dto/filters-blog.dto';
+import { BlogDto } from './dto/blog.dto';
 
 @Controller()
 export class AppController {
@@ -14,7 +15,7 @@ export class AppController {
   }
 
   @MessagePattern({ service: 'blog-service', cmd: 'create-blog' })
-  async createBlog(createBlogDto: Blog): Promise<Blog> {
+  async createBlog(createBlogDto: BlogDto): Promise<Blog> {
     return this.appService.create(createBlogDto);
   }
 
